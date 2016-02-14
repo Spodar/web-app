@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>My backbone.js app</title>
+        <link type="image/x-icon" rel="shortcut icon" href="favicon.ico">
+        <link rel="stylesheet" href="css/style.css"/>
+    </head>
+    <body>
+        
+        <div id="car-item" class="row">
+            <header>
+                <img src="img/Muscle_Cars.png" alt="">
+                <span id="filter"><label>Brand: </label></span>
+                <a id="showForm" href="#">ADD CAR</a>
+                <form id="addCar" action="#">
+                    <label for="models">Model:</label><input id="models" />
+                    <label for="brands">Brand:</label><input id="brands" />
+                    <label for="release_year">Release year:</label><input id="release_year" />
+                    <label for="engine_large">Engine large:</label><input id="engine_large" />
+                    <label for="horsepower">Horsepower:</label><input id="horsepower" />
+                    <button id="add">Add</button>
+                </form>
+            </header>
+        </div>
+
+        <script id="carTemplate" type="text/template">
+            <img src="<%= car_img %>" alt="<%= name %>" />
+            <h1><%= brands %><span>Horse power: <%= horsepower %></span></h1>
+            <div>Model: <%= models %></div>
+            <dl>
+                <dt>Year: </dt><dd><%= release_year %></dd>
+                <dt>Engine: </dt><dd><%= engine_large %> cu</dd>
+            </dl>
+            <button class="delete">Delete</button>
+            <button class="edit">Edit</button>
+        </script>
+
+        <script id="carEditTemplate" type="text/template">
+            <form action="#">
+                <input class="models" value="<%= models %>" />
+                <input id="brands" value="<%= brands %>" /><br><br>
+                <input class="release_year" value="<%= release_year %>" />
+                <input class="engine_large" value="<%= engine_large %>" /><br><br>
+                <input class="horsepower" value="<%= horsepower %>" />
+                <button class="save">Save</button>
+                <button class="cancel">Cancel</button>
+            </form>
+        </script>
+
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/underscore-min.js"></script>
+        <script src="js/backbone-min.js"></script>
+        <script src="js/engine.js"></script>
+    </body>
+</html>
